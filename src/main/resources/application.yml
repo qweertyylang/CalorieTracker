@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+
+  config:
+    import: "config/prop/application-${spring.profiles.active}.yml"
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  thymeleaf:
+    prefix: classpath:/templates/
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+rsa:
+  public-key: classpath:certs/public.pem
+  private-key: classpath:certs/private.pem

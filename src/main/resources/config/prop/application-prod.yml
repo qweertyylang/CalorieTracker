@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://psql-db:5432/trackerdb
+    username: postgres
+    password: root
