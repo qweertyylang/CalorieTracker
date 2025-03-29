@@ -1,4 +1,4 @@
-package com.calorietracker.component.controller;
+package com.calorietracker.component.controller.api;
 
 import com.calorietracker.component.request.SignUpRequest;
 import com.calorietracker.component.service.user.UserService;
@@ -10,13 +10,13 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth/sign-up")
-public class SignUpController {
+@RequestMapping("/api/v1/auth/sign-up")
+public class SignUpRestController {
 
     private final UserService userService;
 
     @Autowired
-    public SignUpController(UserService userService) {
+    public SignUpRestController(UserService userService) {
         this.userService = userService;
     }
 

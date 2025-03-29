@@ -69,7 +69,7 @@ public class WebSecurityConfiguration {
                 return cc;
             }))
             .authorizeHttpRequests(req -> req
-                .requestMatchers("/auth/sign-in", "/auth/sign-up")
+                .requestMatchers("/api/v1/auth/sign-in", "/api/v1/auth/sign-up")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
