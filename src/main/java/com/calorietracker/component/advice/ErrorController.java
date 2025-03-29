@@ -12,7 +12,9 @@ public class ErrorController {
     @ExceptionHandler({
         EntityNotFoundException.class
     })
-    public <T extends RuntimeException> ResponseEntity<T> notFount(T ex) {
+    public <T extends RuntimeException> ResponseEntity<T> notFount(
+        T ex
+    ) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
             .body(ex);
     }

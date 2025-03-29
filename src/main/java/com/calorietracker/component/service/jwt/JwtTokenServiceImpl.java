@@ -39,7 +39,7 @@ public class JwtTokenServiceImpl implements JwtTokenService {
         JwtClaimsSet claimsSet = JwtClaimsSet.builder()
             .issuer("self")
             .issuedAt(now)
-            .expiresAt(now.plus(2, ChronoUnit.MINUTES))
+            .expiresAt(now.plus(8, ChronoUnit.HOURS))
             .subject(authenticationUser.getUsername())
             .build();
 
@@ -52,7 +52,7 @@ public class JwtTokenServiceImpl implements JwtTokenService {
         JwtClaimsSet claimsSet = JwtClaimsSet.builder()
             .issuer("self")
             .issuedAt(now)
-            .expiresAt(now.plus(10, ChronoUnit.MINUTES))
+            .expiresAt(now.plus(7, ChronoUnit.DAYS))
             .subject(authenticationUser.getUsername())
             .build();
 

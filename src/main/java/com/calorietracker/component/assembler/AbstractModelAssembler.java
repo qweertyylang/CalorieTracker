@@ -11,7 +11,9 @@ public abstract class AbstractModelAssembler<T, E extends RepresentationModel<?>
     implements RepresentationModelAssembler<T, E> {
 
     @NonNull
-    public List<E> toModelList(@NonNull Iterable<? extends T> entities) {
+    public List<E> toModelList(
+        @NonNull Iterable<? extends T> entities
+    ) {
         List<E> models = new ArrayList<>();
 
         for (T entity : entities) {

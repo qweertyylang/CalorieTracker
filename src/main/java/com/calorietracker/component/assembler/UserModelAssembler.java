@@ -10,7 +10,9 @@ public class UserModelAssembler extends AbstractModelAssembler<User, UserModel>{
 
     @Override
     @NonNull
-    public UserModel toModel(@NonNull User entity) {
+    public UserModel toModel(
+        @NonNull User entity
+    ) {
         UserModel userModel = new UserModel();
 
         userModel.setAge(entity.getAge())

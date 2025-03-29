@@ -1,13 +1,6 @@
-package com.calorietracker.entity;
+package com.calorietracker.component.request;
 
-import jakarta.persistence.*;
-
-@Entity
-public class Dish {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class DishCreateRequest {
 
     private String name;
 
@@ -19,26 +12,13 @@ public class Dish {
 
     private int carbs;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", updatable = false, insertable = false)
-    private User user;
-
-    @Column(name = "user_id")
     private Long userId;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
     }
 
-    public Dish setName(String name) {
+    public DishCreateRequest setName(String name) {
         this.name = name;
         return this;
     }
@@ -47,7 +27,7 @@ public class Dish {
         return calories;
     }
 
-    public Dish setCalories(int calories) {
+    public DishCreateRequest setCalories(int calories) {
         this.calories = calories;
         return this;
     }
@@ -56,7 +36,7 @@ public class Dish {
         return proteins;
     }
 
-    public Dish setProteins(int proteins) {
+    public DishCreateRequest setProteins(int proteins) {
         this.proteins = proteins;
         return this;
     }
@@ -65,7 +45,7 @@ public class Dish {
         return fats;
     }
 
-    public Dish setFats(int fats) {
+    public DishCreateRequest setFats(int fats) {
         this.fats = fats;
         return this;
     }
@@ -74,17 +54,8 @@ public class Dish {
         return carbs;
     }
 
-    public Dish setCarbs(int carbs) {
+    public DishCreateRequest setCarbs(int carbs) {
         this.carbs = carbs;
-        return this;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public Dish setUser(User user) {
-        this.user = user;
         return this;
     }
 
@@ -92,7 +63,7 @@ public class Dish {
         return userId;
     }
 
-    public Dish setUserId(Long userId) {
+    public DishCreateRequest setUserId(Long userId) {
         this.userId = userId;
         return this;
     }

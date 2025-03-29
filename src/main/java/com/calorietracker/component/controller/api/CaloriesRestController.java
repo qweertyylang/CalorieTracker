@@ -15,7 +15,9 @@ public class CaloriesRestController {
     private final CaloriesService caloriesService;
 
     @Autowired
-    public CaloriesRestController(CaloriesService caloriesService) {
+    public CaloriesRestController(
+        CaloriesService caloriesService
+    ) {
         this.caloriesService = caloriesService;
     }
 
