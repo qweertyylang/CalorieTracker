@@ -30,19 +30,19 @@ services:
       - tracker-net
     restart: always
 
-#  application:
-#    image: calorie-tracker:latest
-#    container_name: tracker
-#    build:
-#      context: .
-#    depends_on:
-#      psql-db:
-#        condition: service_healthy
-#    ports:
-#      - "8080:8080"
-#    networks:
-#      - tracker-net
-#    restart: always
+  application:
+    image: calorie-tracker:latest
+    container_name: tracker
+    build:
+      context: .
+    depends_on:
+      psql-db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    networks:
+      - tracker-net
+    restart: always
 
 volumes:
   psql_db_data:
