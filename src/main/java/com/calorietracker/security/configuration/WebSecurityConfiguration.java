@@ -1,4 +1,4 @@
-package com.calorietracker.configuration;
+package com.calorietracker.security.configuration;
 
 import com.calorietracker.component.propertie.RsaProperties;
 import com.nimbusds.jose.jwk.JWK;
@@ -12,13 +12,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.configurers.CorsConfigurer;
-import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
@@ -34,12 +31,9 @@ public class WebSecurityConfiguration {
 
     private final RsaProperties rsaProperties;
 
-    private final AuthenticationManager authenticationManager;
-
     @Autowired
-    public WebSecurityConfiguration(RsaProperties rsaProperties, AuthenticationManager authenticationManager) {
+    public WebSecurityConfiguration(RsaProperties rsaProperties) {
         this.rsaProperties = rsaProperties;
-        this.authenticationManager = authenticationManager;
     }
 
     @Bean

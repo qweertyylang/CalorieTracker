@@ -17,6 +17,10 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
 
+  messages:
+    basename: config/i18n/messages
+    encoding: UTF-8
+
 logging:
   level:
     org:
